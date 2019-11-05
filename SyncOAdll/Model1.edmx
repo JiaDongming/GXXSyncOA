@@ -1,0 +1,1481 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GXX_DSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bug">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+            <PropertyRef Name="BugID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="BugID" Type="int" Nullable="false" />
+          <Property Name="ProblemID" Type="nvarchar" MaxLength="20" />
+          <Property Name="BugTitle" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedTypeID" Type="int" />
+          <Property Name="PrevBugIDIfReopen" Type="int" />
+          <Property Name="CreatedByPerson" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="CurrentOwner" Type="int" />
+          <Property Name="ProgressStatusID" Type="int" />
+          <Property Name="AssignedByPersonID" Type="int" />
+          <Property Name="DateAssigned" Type="datetime" />
+          <Property Name="ClosedByPerson" Type="int" />
+          <Property Name="CloseStatusID" Type="int" />
+          <Property Name="DateClosed" Type="datetime" />
+          <Property Name="CrntPriorityID" Type="int" />
+          <Property Name="IsActive" Type="smallint" />
+          <Property Name="IfClosed" Type="smallint" />
+          <Property Name="CrntOriginTypeID" Type="int" />
+          <Property Name="CrntBugTypeID" Type="int" />
+          <Property Name="NoOfHistories" Type="int" />
+          <Property Name="LockOwner" Type="nvarchar" MaxLength="25" />
+          <Property Name="CrntPlatformID" Type="int" />
+          <Property Name="CrntVersion" Type="nvarchar" MaxLength="50" />
+          <Property Name="CrntVersionID" Type="int" />
+          <Property Name="TargetReleaseID" Type="int" />
+          <Property Name="TargetDate" Type="datetime" />
+          <Property Name="EstimatedHours" Type="int" />
+          <Property Name="ActualHours" Type="int" />
+          <Property Name="DateFixed" Type="datetime" />
+          <Property Name="CrntForwardTypeID" Type="int" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="IsSharedIssue" Type="bit" Nullable="false" />
+          <Property Name="CrntGroupID" Type="int" />
+          <Property Name="PlanedStartDate" Type="datetime" />
+          <Property Name="PlanedEndDate" Type="datetime" />
+          <Property Name="CrntFolderID" Type="int" />
+          <Property Name="LastUpdateNo" Type="int" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="NoOfResponses" Type="int" />
+          <Property Name="AvailableToCustomer" Type="int" />
+          <Property Name="ContactID" Type="int" />
+          <Property Name="PublishedKnowledgeID" Type="int" />
+          <Property Name="EmailStatusBits" Type="int" />
+          <Property Name="DateModified" Type="datetime" />
+          <Property Name="DateLastOpenMail" Type="datetime" />
+          <Property Name="DateLastUntouchMail" Type="datetime" />
+          <Property Name="AccessCustomerMethod" Type="int" />
+          <Property Name="ServicePlanID" Type="int" />
+          <Property Name="InvoiceID" Type="int" />
+          <Property Name="Ready4Billing" Type="int" />
+          <Property Name="IfClosedByCustomer" Type="int" />
+          <Property Name="DateLastDueDateMail" Type="datetime" />
+          <Property Name="EstimatedCost" Type="float" />
+          <Property Name="EnableLiveSupport" Type="int" />
+          <Property Name="IfFinishDateLinked" Type="int" />
+          <Property Name="TotalSale" Type="float" />
+          <Property Name="SalesOrderTemplateID" Type="int" />
+          <Property Name="SalesPossibility" Type="int" />
+          <Property Name="SalesStatusID" Type="int" />
+          <Property Name="ExpectedPODate" Type="datetime" />
+          <Property Name="PrimaryQuoteID" Type="int" />
+          <Property Name="PODate" Type="datetime" />
+          <Property Name="SubProjectID" Type="int" />
+          <Property Name="PriorityValue" Type="int" />
+          <Property Name="PriorityOrder" Type="int" />
+          <Property Name="LinkedMSProjectTaskID" Type="int" />
+          <Property Name="LastStatusDate" Type="datetime" />
+          <Property Name="SalesLostDate" Type="datetime" />
+          <Property Name="InstallSiteID" Type="int" />
+          <Property Name="PrimaryEventID" Type="int" />
+          <Property Name="AttachmentID" Type="int" />
+          <Property Name="AttachmentTypeID" Type="int" />
+          <Property Name="IfBillable" Type="int" />
+          <Property Name="PrimaryContactID" Type="int" />
+          <Property Name="ExternalBugID" Type="nvarchar" MaxLength="20" />
+          <Property Name="SalesPersonID" Type="int" />
+          <Property Name="TotalNetSales" Type="float" />
+          <Property Name="IfAssetLink4SalesProcessed" Type="int" />
+          <Property Name="ActiveStartDate" Type="datetime" />
+          <Property Name="ActiveEndDate" Type="datetime" />
+          <Property Name="IfNewSales" Type="int" />
+          <Property Name="IfResponseTimeLinked" Type="int" />
+          <Property Name="PlanResponseTimeID" Type="int" />
+          <Property Name="TimeResponded" Type="datetime" />
+          <Property Name="TimeResolved" Type="datetime" />
+          <Property Name="LostToCompetitorID" Type="int" />
+          <Property Name="LinkedQATestKnowledgeID" Type="int" />
+          <Property Name="LinkedQAIssueTemplateID" Type="int" />
+          <Property Name="IssueType" Type="int" />
+          <Property Name="CompetitorSurveyTmpltID" Type="int" />
+          <Property Name="CreatedFromWebClickID" Type="int" />
+          <Property Name="LinkedFormTemplateID" Type="int" />
+          <Property Name="ParentIfParent" Type="int" />
+          <Property Name="ParentIssueID" Type="int" />
+          <Property Name="LinkedShortCutIssueID" Type="int" />
+          <Property Name="LinkedSalesTotal" Type="float" />
+          <Property Name="SubmittedFromEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="DynamicOwnerFolderID" Type="int" />
+          <Property Name="RequiredResponseTime" Type="datetime" />
+          <Property Name="RequiredResolveTime" Type="datetime" />
+          <Property Name="ActualResponseTime" Type="datetime" />
+          <Property Name="ActualResolveTime" Type="datetime" />
+          <Property Name="ActualResponseMinutes" Type="int" />
+          <Property Name="ActualResolveMinutes" Type="int" />
+          <Property Name="SLAStartTime" Type="datetime" />
+          <Property Name="IfSLAException" Type="int" />
+          <Property Name="LastTransitionID" Type="int" />
+          <Property Name="IfNewRequest" Type="int" />
+          <Property Name="RequestTime" Type="datetime" />
+          <Property Name="IsLocked" Type="int" />
+          <Property Name="LockedByPersonID" Type="int" />
+          <Property Name="IsNotAcknowledged" Type="int" />
+          <Property Name="WorkflowID" Type="int" />
+          <Property Name="IssueTypeID" Type="int" />
+          <Property Name="ReleaseBuildID" Type="int" />
+          <Property Name="TimeSpent" Type="int" />
+          <Property Name="TimeRemain" Type="int" />
+          <Property Name="IssueFinishDate" Type="datetime" />
+          <Property Name="CurrencyID" Type="int" />
+          <Property Name="CurrencyRate" Type="float" />
+          <Property Name="ProblemDescriptionUcd" Type="ntext" />
+          <Property Name="CloseDescriptionUcd" Type="ntext" />
+          <Property Name="LinkedSpecID" Type="int" />
+          <Property Name="DevSpecSubProjectID" Type="int" />
+          <Property Name="LinkedModuleID" Type="int" />
+          <Property Name="BacklogSubProjectID" Type="int" />
+          <Property Name="LinkedDefectSpecID" Type="int" />
+          <Property Name="BacklogItemPriorityValue" Type="int" />
+          <Property Name="BacklogItemOrder" Type="int" />
+          <Property Name="SpecificationPoint" Type="int" />
+          <Property Name="CloseDescription" Type="ntext" />
+          <Property Name="ProblemDescription" Type="ntext" />
+          <Property Name="ContactMemo" Type="ntext" />
+          <Property Name="AnswerToCustomer" Type="ntext" />
+          <Property Name="TaskPlannedStartDate" Type="datetime" />
+          <Property Name="TaskPlannedFinishDate" Type="datetime" />
+          <Property Name="LinkedImplementationCopyID" Type="int" />
+          <Property Name="IfRestoreTimeLinked" Type="int" />
+          <Property Name="RequiredRestoreTime" Type="datetime" />
+          <Property Name="ActualRestoreTime" Type="datetime" />
+          <Property Name="ActualRestoreMinutes" Type="int" />
+          <Property Name="PlannedRestoreTime" Type="datetime" />
+          <Property Name="CWPSourceIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="CWPSourceName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrimaryResource" Type="int" />
+          <Property Name="EstTotal" Type="int" />
+          <Property Name="IfCommitted" Type="int" />
+          <Property Name="ParentStoryItemID" Type="int" />
+          <Property Name="IssueActualStartDate" Type="datetime" />
+          <Property Name="EmployeeOnBehalfOf" Type="int" />
+          <Property Name="LastModifiedByPerson" Type="int" />
+          <Property Name="ProductVersionOption" Type="int" />
+          <Property Name="LinkedSvcAssetID" Type="int" />
+          <Property Name="IsArchived" Type="int" />
+          <Property Name="EmployeeManager" Type="int" />
+          <Property Name="EvaluationValueID" Type="int" />
+          <Property Name="EvaluationComments" Type="ntext" />
+          <Property Name="LinkedKWSolutionID" Type="int" />
+          <Property Name="Score" Type="int" />
+          <Property Name="KeyTask" Type="int" />
+          <Property Name="ParentTaskBoardFolderID" Type="int" />
+        </EntityType>
+        <EntityType Name="CustomerFieldTrackExt">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+            <PropertyRef Name="BugID" />
+            <PropertyRef Name="SequenceNo" />
+          </Key>
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="BugID" Type="int" Nullable="false" />
+          <Property Name="SequenceNo" Type="int" Nullable="false" />
+          <Property Name="Custom_1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_3" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_4" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_5" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_6" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_7" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_8" Type="nvarchar" MaxLength="255" />
+          <Property Name="Desc_Custom_1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Desc_Custom_2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Desc_Custom_3" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status_Custom_1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status_Custom_2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_201" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_202" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_203" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_204" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_205" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_206" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_207" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_208" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_301" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_302" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_303" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_304" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_305" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_306" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_307" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_308" Type="nvarchar" MaxLength="255" />
+          <Property Name="Desc_Custom_1_Double" Type="float" />
+          <Property Name="Desc_Custom_1_Int" Type="int" />
+          <Property Name="Desc_Custom_1_Date" Type="datetime" />
+          <Property Name="Desc_Custom_2_Double" Type="float" />
+          <Property Name="Desc_Custom_2_Int" Type="int" />
+          <Property Name="Desc_Custom_2_Date" Type="datetime" />
+          <Property Name="Desc_Custom_3_Double" Type="float" />
+          <Property Name="Desc_Custom_3_Int" Type="int" />
+          <Property Name="Desc_Custom_3_Date" Type="datetime" />
+          <Property Name="Custom_9Ucd" Type="ntext" />
+          <Property Name="Custom_10Ucd" Type="ntext" />
+          <Property Name="Custom_11Ucd" Type="ntext" />
+          <Property Name="Custom_12Ucd" Type="ntext" />
+          <Property Name="Custom_209Ucd" Type="ntext" />
+          <Property Name="Custom_210Ucd" Type="ntext" />
+          <Property Name="Custom_211Ucd" Type="ntext" />
+          <Property Name="Custom_212Ucd" Type="ntext" />
+          <Property Name="Custom_309Ucd" Type="ntext" />
+          <Property Name="Custom_310Ucd" Type="ntext" />
+          <Property Name="Custom_311Ucd" Type="ntext" />
+          <Property Name="Custom_312Ucd" Type="ntext" />
+          <Property Name="Custom_9" Type="ntext" />
+          <Property Name="Custom_10" Type="ntext" />
+          <Property Name="Custom_11" Type="ntext" />
+          <Property Name="Custom_12" Type="ntext" />
+          <Property Name="Custom_209" Type="ntext" />
+          <Property Name="Custom_210" Type="ntext" />
+          <Property Name="Custom_211" Type="ntext" />
+          <Property Name="Custom_212" Type="ntext" />
+          <Property Name="Custom_309" Type="ntext" />
+          <Property Name="Custom_310" Type="ntext" />
+          <Property Name="Custom_311" Type="ntext" />
+          <Property Name="Custom_312" Type="ntext" />
+        </EntityType>
+        <EntityType Name="CustomerFieldTrackExt2">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+            <PropertyRef Name="IssueID" />
+            <PropertyRef Name="PageNumber" />
+          </Key>
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="IssueID" Type="int" Nullable="false" />
+          <Property Name="PageNumber" Type="int" Nullable="false" />
+          <Property Name="Custom_1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_3" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_4" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_5" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_6" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_7" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_8" Type="nvarchar" MaxLength="255" />
+          <Property Name="Custom_9Ucd" Type="ntext" />
+          <Property Name="Custom_10Ucd" Type="ntext" />
+          <Property Name="Custom_11Ucd" Type="ntext" />
+          <Property Name="Custom_12Ucd" Type="ntext" />
+          <Property Name="Custom_9" Type="ntext" />
+          <Property Name="Custom_10" Type="ntext" />
+          <Property Name="Custom_11" Type="ntext" />
+          <Property Name="Custom_12" Type="ntext" />
+        </EntityType>
+        <EntityType Name="KWAttachments">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+            <PropertyRef Name="AttachmentID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="AttachmentID" Type="int" Nullable="false" />
+          <Property Name="AttachmentTypeID" Type="int" />
+          <Property Name="IssueID" Type="int" />
+          <Property Name="AttachmentTitle" Type="nvarchar" MaxLength="255" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="CreatedByID" Type="int" />
+          <Property Name="DateModified" Type="datetime" />
+          <Property Name="ModifiedByID" Type="int" />
+          <Property Name="AttachmentFileID" Type="int" />
+          <Property Name="AttachmentFileName" Type="nvarchar" MaxLength="1000" />
+          <Property Name="AttachmentFolderID" Type="int" />
+          <Property Name="AttachmentVersionNo" Type="int" />
+          <Property Name="LastCheckOutBy" Type="int" />
+          <Property Name="LastCheckOutDate" Type="datetime" />
+          <Property Name="CheckOutPath" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastCheckInDate" Type="datetime" />
+          <Property Name="LastCheckInBy" Type="int" />
+          <Property Name="IssueTypeID" Type="int" />
+          <Property Name="AttachmentProjectID" Type="int" />
+          <Property Name="AttachmentDescription" Type="ntext" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="IfSavedtoProjMaster" Type="int" />
+          <Property Name="CreatedFromSiteID" Type="int" />
+          <Property Name="OfflineFileID" Type="int" />
+          <Property Name="LinkedIdeaID" Type="nvarchar" MaxLength="100" />
+          <Property Name="TemplateFileID" Type="int" />
+          <Property Name="IdeaProcessStatus" Type="int" />
+          <Property Name="IdeaPageCount" Type="int" />
+          <Property Name="EnterTime" Type="datetime" />
+          <Property Name="ProcessStartTime" Type="datetime" />
+          <Property Name="ProcessEndTime" Type="datetime" />
+          <Property Name="IdeaErrorMessage" Type="ntext" />
+          <Property Name="HyperLinkInfo" Type="ntext" />
+          <Property Name="DisplayFileName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ParentItemID" Type="int" />
+        </EntityType>
+        <EntityType Name="LogIn">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="FName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="HomePhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Login" Type="nvarchar" MaxLength="20" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="AccountStatus" Type="int" />
+          <Property Name="DateAccountCreated" Type="datetime" />
+          <Property Name="DateAccountClosed" Type="datetime" />
+          <Property Name="IsManager" Type="bit" Nullable="false" />
+          <Property Name="IsActivePerson" Type="bit" Nullable="false" />
+          <Property Name="IsAdministrator" Type="bit" Nullable="false" />
+          <Property Name="IsInSampleProject" Type="bit" Nullable="false" />
+          <Property Name="IsSWiseUser" Type="int" />
+          <Property Name="IsSWiseLightUser" Type="int" />
+          <Property Name="Initial" Type="nvarchar" MaxLength="10" />
+          <Property Name="Pager" Type="nvarchar" MaxLength="50" />
+          <Property Name="PagerType" Type="int" />
+          <Property Name="PagerServiceProvider" Type="nvarchar" MaxLength="20" />
+          <Property Name="PagerEmailAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="MobilePhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileServiceProvider" Type="nvarchar" MaxLength="20" />
+          <Property Name="MobileEmailAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="IfPalmByPassLogin" Type="int" />
+          <Property Name="PalmID" Type="nvarchar" MaxLength="50" />
+          <Property Name="NumPerPalmPage" Type="int" />
+          <Property Name="NTLoginName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsAssetAdmin" Type="int" />
+          <Property Name="IsFormAdmin" Type="int" />
+          <Property Name="Fax" Type="int" />
+          <Property Name="TimeZoneID" Type="int" />
+          <Property Name="EmailSignature" Type="nvarchar" MaxLength="255" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="80" />
+          <Property Name="BaseProjectID" Type="int" />
+          <Property Name="CompanyDivisionID" Type="int" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="20" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductAccessID" Type="int" />
+          <Property Name="UseOwnAddress" Type="int" />
+          <Property Name="FaxNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="LicenseType" Type="int" />
+          <Property Name="IsHDeskUser" Type="int" />
+          <Property Name="IsHDeskLightUser" Type="int" />
+          <Property Name="PagerUserID" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileUserID" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccessDPlusAdmin" Type="int" />
+          <Property Name="AccessDPlusAnalysis" Type="int" />
+          <Property Name="DomesticCountries" Type="nvarchar" MaxLength="50" />
+          <Property Name="IfPersonalAddress4Quote" Type="int" />
+          <Property Name="IfPersonalFax4Phone" Type="int" />
+          <Property Name="IfPersonalPhone4Fax" Type="int" />
+          <Property Name="NeedToEditOwnWorkHours" Type="int" />
+          <Property Name="WorkScheduleID" Type="int" />
+          <Property Name="IsActiveDevTrackUser" Type="int" />
+          <Property Name="IsActiveDevTestUser" Type="int" />
+          <Property Name="UpdateNo" Type="int" />
+          <Property Name="SystemAdminAccountID" Type="int" />
+          <Property Name="IsActiveDevPlanUser" Type="int" />
+          <Property Name="ScopeID" Type="int" />
+          <Property Name="IsActiveTimeSheetUser" Type="int" />
+          <Property Name="TimeSheetProject" Type="int" />
+          <Property Name="ShortCutScopeID" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActiveDevTimeUser" Type="int" />
+          <Property Name="SysDivID" Type="int" />
+          <Property Name="IsSysDivAdministrator" Type="int" />
+          <Property Name="SWLicenseType" Type="int" />
+          <Property Name="HDLicenseType" Type="int" />
+          <Property Name="HSCompanyID" Type="int" />
+          <Property Name="IsHSCompanyAdministrator" Type="int" />
+          <Property Name="IsActiveKnowledgeWiseUser" Type="int" />
+          <Property Name="MaxUnit" Type="int" />
+          <Property Name="IsActiveDevSpecUser" Type="int" />
+          <Property Name="IsActiveAddDevTestUser" Type="int" />
+          <Property Name="AddDevTestLicType" Type="int" />
+          <Property Name="IsDevTestMappingUser" Type="int" />
+          <Property Name="CanPerformOutlookSync" Type="int" />
+          <Property Name="Memo" Type="ntext" />
+          <Property Name="HolidayScheduleID" Type="int" />
+          <Property Name="PortfolioProjectAdmin" Type="int" />
+          <Property Name="PasswordLocked" Type="int" />
+          <Property Name="PasswordLockedTime" Type="datetime" />
+          <Property Name="PasswordUnlockTime" Type="datetime" />
+          <Property Name="PasswordResetOption" Type="int" />
+          <Property Name="UserAccountType" Type="int" />
+          <Property Name="UserAccountExpirationDate" Type="datetime" />
+          <Property Name="LoginFailedTimes" Type="int" />
+          <Property Name="PasswordResetTime" Type="datetime" />
+          <Property Name="PasswordStartTime" Type="datetime" />
+          <Property Name="CanUseDTClient" Type="int" />
+          <Property Name="CanUseMyDevSuite" Type="int" />
+          <Property Name="DevSuiteSysAdminAccountID" Type="int" />
+          <Property Name="APIAccessToken" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsLocked" Type="int" />
+          <Property Name="NumOfTries" Type="int" />
+          <Property Name="DateLastLoginTry" Type="datetime" />
+          <Property Name="IsActivePPMUser" Type="int" />
+          <Property Name="JobRoleID" Type="int" />
+          <Property Name="LastLoggedNotifyID" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastLoggedDeviceID" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastLoggedDeviceType" Type="int" />
+          <Property Name="IfAppLogged" Type="int" />
+          <Property Name="OldPassword1" Type="nvarchar" MaxLength="255" />
+          <Property Name="OldPassword2" Type="nvarchar" MaxLength="255" />
+          <Property Name="OldPassword3" Type="nvarchar" MaxLength="255" />
+          <Property Name="OldPassword4" Type="nvarchar" MaxLength="255" />
+          <Property Name="OldPassword5" Type="nvarchar" MaxLength="255" />
+          <Property Name="IfPasswordIsTemp" Type="int" />
+          <Property Name="PasswordChangeTime" Type="datetime" />
+          <Property Name="WeChatID" Type="nvarchar" MaxLength="255" />
+          <Property Name="WorkStatusID" Type="int" />
+          <Property Name="AutoResponderMsg" Type="ntext" />
+          <Property Name="AutoResponderStartDate" Type="datetime" />
+          <Property Name="AutoResponderEndDate" Type="datetime" />
+          <Property Name="IsPeerTimeUser" Type="int" />
+        </EntityType>
+        <EntityType Name="ProgressStatusTypes">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+            <PropertyRef Name="ProgressStatusID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="ProgressStatusID" Type="int" Nullable="false" />
+          <Property Name="ProgressStatusName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="CanBeInitialState" Type="int" />
+          <Property Name="CanBeCloseState" Type="int" />
+          <Property Name="CanBeReopenState" Type="int" />
+          <Property Name="DefaultOwnerID" Type="int" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="CustomerAccess" Type="int" />
+          <Property Name="IfResolved" Type="int" />
+          <Property Name="IfResponded" Type="int" />
+          <Property Name="DisplayOrder" Type="int" />
+          <Property Name="IfSetSLAStartTime" Type="int" />
+          <Property Name="IfClosed" Type="int" />
+          <Property Name="NeedIdentityConfirmation" Type="int" />
+          <Property Name="IfDevTimeDefaultNew" Type="int" />
+          <Property Name="SetTimeToZero" Type="int" />
+          <Property Name="AddTimeRemain" Type="int" />
+          <Property Name="HSCompanyID" Type="int" />
+          <Property Name="DefaultOwnerID4Unassigned" Type="int" />
+          <Property Name="DefaultOwnerID4NonAppl" Type="int" />
+          <Property Name="DefaultOwner4Appl" Type="int" />
+          <Property Name="DefaultOwner4NonAppl" Type="int" />
+          <Property Name="ApplicableToRespond" Type="int" />
+          <Property Name="ApplicableToResolve" Type="int" />
+          <Property Name="Comments" Type="ntext" />
+          <Property Name="IfRestored" Type="int" />
+          <Property Name="ApplicableToRestore" Type="int" />
+          <Property Name="SetResolved4WebConversation" Type="int" />
+          <Property Name="ConfirmationMsg" Type="ntext" />
+          <Property Name="IdentityConfirmMsg" Type="ntext" />
+          <Property Name="GoToPrevStateOption" Type="int" />
+          <Property Name="IfEnableUserEvaluation" Type="int" />
+          <Property Name="OwnerMustBeAssigned" Type="int" />
+          <Property Name="WorkflowTypeOption" Type="int" />
+          <Property Name="IfDefaultOwner4SamePrevious" Type="int" />
+        </EntityType>
+        <EntityContainer Name="GXX_DSModelStoreContainer">
+          <EntitySet Name="Bug" EntityType="Self.Bug" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerFieldTrackExt" EntityType="Self.CustomerFieldTrackExt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerFieldTrackExt2" EntityType="Self.CustomerFieldTrackExt2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KWAttachments" EntityType="Self.KWAttachments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogIn" EntityType="Self.LogIn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProgressStatusTypes" EntityType="Self.ProgressStatusTypes" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GXX_DSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bug">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+            <PropertyRef Name="BugID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="BugID" Type="Int32" Nullable="false" />
+          <Property Name="ProblemID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BugTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedTypeID" Type="Int32" />
+          <Property Name="PrevBugIDIfReopen" Type="Int32" />
+          <Property Name="CreatedByPerson" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="CurrentOwner" Type="Int32" />
+          <Property Name="ProgressStatusID" Type="Int32" />
+          <Property Name="AssignedByPersonID" Type="Int32" />
+          <Property Name="DateAssigned" Type="DateTime" Precision="3" />
+          <Property Name="ClosedByPerson" Type="Int32" />
+          <Property Name="CloseStatusID" Type="Int32" />
+          <Property Name="DateClosed" Type="DateTime" Precision="3" />
+          <Property Name="CrntPriorityID" Type="Int32" />
+          <Property Name="IsActive" Type="Int16" />
+          <Property Name="IfClosed" Type="Int16" />
+          <Property Name="CrntOriginTypeID" Type="Int32" />
+          <Property Name="CrntBugTypeID" Type="Int32" />
+          <Property Name="NoOfHistories" Type="Int32" />
+          <Property Name="LockOwner" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="CrntPlatformID" Type="Int32" />
+          <Property Name="CrntVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CrntVersionID" Type="Int32" />
+          <Property Name="TargetReleaseID" Type="Int32" />
+          <Property Name="TargetDate" Type="DateTime" Precision="3" />
+          <Property Name="EstimatedHours" Type="Int32" />
+          <Property Name="ActualHours" Type="Int32" />
+          <Property Name="DateFixed" Type="DateTime" Precision="3" />
+          <Property Name="CrntForwardTypeID" Type="Int32" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="IsSharedIssue" Type="Boolean" Nullable="false" />
+          <Property Name="CrntGroupID" Type="Int32" />
+          <Property Name="PlanedStartDate" Type="DateTime" Precision="3" />
+          <Property Name="PlanedEndDate" Type="DateTime" Precision="3" />
+          <Property Name="CrntFolderID" Type="Int32" />
+          <Property Name="LastUpdateNo" Type="Int32" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="NoOfResponses" Type="Int32" />
+          <Property Name="AvailableToCustomer" Type="Int32" />
+          <Property Name="ContactID" Type="Int32" />
+          <Property Name="PublishedKnowledgeID" Type="Int32" />
+          <Property Name="EmailStatusBits" Type="Int32" />
+          <Property Name="DateModified" Type="DateTime" Precision="3" />
+          <Property Name="DateLastOpenMail" Type="DateTime" Precision="3" />
+          <Property Name="DateLastUntouchMail" Type="DateTime" Precision="3" />
+          <Property Name="AccessCustomerMethod" Type="Int32" />
+          <Property Name="ServicePlanID" Type="Int32" />
+          <Property Name="InvoiceID" Type="Int32" />
+          <Property Name="Ready4Billing" Type="Int32" />
+          <Property Name="IfClosedByCustomer" Type="Int32" />
+          <Property Name="DateLastDueDateMail" Type="DateTime" Precision="3" />
+          <Property Name="EstimatedCost" Type="Double" />
+          <Property Name="EnableLiveSupport" Type="Int32" />
+          <Property Name="IfFinishDateLinked" Type="Int32" />
+          <Property Name="TotalSale" Type="Double" />
+          <Property Name="SalesOrderTemplateID" Type="Int32" />
+          <Property Name="SalesPossibility" Type="Int32" />
+          <Property Name="SalesStatusID" Type="Int32" />
+          <Property Name="ExpectedPODate" Type="DateTime" Precision="3" />
+          <Property Name="PrimaryQuoteID" Type="Int32" />
+          <Property Name="PODate" Type="DateTime" Precision="3" />
+          <Property Name="SubProjectID" Type="Int32" />
+          <Property Name="PriorityValue" Type="Int32" />
+          <Property Name="PriorityOrder" Type="Int32" />
+          <Property Name="LinkedMSProjectTaskID" Type="Int32" />
+          <Property Name="LastStatusDate" Type="DateTime" Precision="3" />
+          <Property Name="SalesLostDate" Type="DateTime" Precision="3" />
+          <Property Name="InstallSiteID" Type="Int32" />
+          <Property Name="PrimaryEventID" Type="Int32" />
+          <Property Name="AttachmentID" Type="Int32" />
+          <Property Name="AttachmentTypeID" Type="Int32" />
+          <Property Name="IfBillable" Type="Int32" />
+          <Property Name="PrimaryContactID" Type="Int32" />
+          <Property Name="ExternalBugID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SalesPersonID" Type="Int32" />
+          <Property Name="TotalNetSales" Type="Double" />
+          <Property Name="IfAssetLink4SalesProcessed" Type="Int32" />
+          <Property Name="ActiveStartDate" Type="DateTime" Precision="3" />
+          <Property Name="ActiveEndDate" Type="DateTime" Precision="3" />
+          <Property Name="IfNewSales" Type="Int32" />
+          <Property Name="IfResponseTimeLinked" Type="Int32" />
+          <Property Name="PlanResponseTimeID" Type="Int32" />
+          <Property Name="TimeResponded" Type="DateTime" Precision="3" />
+          <Property Name="TimeResolved" Type="DateTime" Precision="3" />
+          <Property Name="LostToCompetitorID" Type="Int32" />
+          <Property Name="LinkedQATestKnowledgeID" Type="Int32" />
+          <Property Name="LinkedQAIssueTemplateID" Type="Int32" />
+          <Property Name="IssueType" Type="Int32" />
+          <Property Name="CompetitorSurveyTmpltID" Type="Int32" />
+          <Property Name="CreatedFromWebClickID" Type="Int32" />
+          <Property Name="LinkedFormTemplateID" Type="Int32" />
+          <Property Name="ParentIfParent" Type="Int32" />
+          <Property Name="ParentIssueID" Type="Int32" />
+          <Property Name="LinkedShortCutIssueID" Type="Int32" />
+          <Property Name="LinkedSalesTotal" Type="Double" />
+          <Property Name="SubmittedFromEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DynamicOwnerFolderID" Type="Int32" />
+          <Property Name="RequiredResponseTime" Type="DateTime" Precision="3" />
+          <Property Name="RequiredResolveTime" Type="DateTime" Precision="3" />
+          <Property Name="ActualResponseTime" Type="DateTime" Precision="3" />
+          <Property Name="ActualResolveTime" Type="DateTime" Precision="3" />
+          <Property Name="ActualResponseMinutes" Type="Int32" />
+          <Property Name="ActualResolveMinutes" Type="Int32" />
+          <Property Name="SLAStartTime" Type="DateTime" Precision="3" />
+          <Property Name="IfSLAException" Type="Int32" />
+          <Property Name="LastTransitionID" Type="Int32" />
+          <Property Name="IfNewRequest" Type="Int32" />
+          <Property Name="RequestTime" Type="DateTime" Precision="3" />
+          <Property Name="IsLocked" Type="Int32" />
+          <Property Name="LockedByPersonID" Type="Int32" />
+          <Property Name="IsNotAcknowledged" Type="Int32" />
+          <Property Name="WorkflowID" Type="Int32" />
+          <Property Name="IssueTypeID" Type="Int32" />
+          <Property Name="ReleaseBuildID" Type="Int32" />
+          <Property Name="TimeSpent" Type="Int32" />
+          <Property Name="TimeRemain" Type="Int32" />
+          <Property Name="IssueFinishDate" Type="DateTime" Precision="3" />
+          <Property Name="CurrencyID" Type="Int32" />
+          <Property Name="CurrencyRate" Type="Double" />
+          <Property Name="ProblemDescriptionUcd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CloseDescriptionUcd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LinkedSpecID" Type="Int32" />
+          <Property Name="DevSpecSubProjectID" Type="Int32" />
+          <Property Name="LinkedModuleID" Type="Int32" />
+          <Property Name="BacklogSubProjectID" Type="Int32" />
+          <Property Name="LinkedDefectSpecID" Type="Int32" />
+          <Property Name="BacklogItemPriorityValue" Type="Int32" />
+          <Property Name="BacklogItemOrder" Type="Int32" />
+          <Property Name="SpecificationPoint" Type="Int32" />
+          <Property Name="CloseDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProblemDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactMemo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnswerToCustomer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TaskPlannedStartDate" Type="DateTime" Precision="3" />
+          <Property Name="TaskPlannedFinishDate" Type="DateTime" Precision="3" />
+          <Property Name="LinkedImplementationCopyID" Type="Int32" />
+          <Property Name="IfRestoreTimeLinked" Type="Int32" />
+          <Property Name="RequiredRestoreTime" Type="DateTime" Precision="3" />
+          <Property Name="ActualRestoreTime" Type="DateTime" Precision="3" />
+          <Property Name="ActualRestoreMinutes" Type="Int32" />
+          <Property Name="PlannedRestoreTime" Type="DateTime" Precision="3" />
+          <Property Name="CWPSourceIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CWPSourceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrimaryResource" Type="Int32" />
+          <Property Name="EstTotal" Type="Int32" />
+          <Property Name="IfCommitted" Type="Int32" />
+          <Property Name="ParentStoryItemID" Type="Int32" />
+          <Property Name="IssueActualStartDate" Type="DateTime" Precision="3" />
+          <Property Name="EmployeeOnBehalfOf" Type="Int32" />
+          <Property Name="LastModifiedByPerson" Type="Int32" />
+          <Property Name="ProductVersionOption" Type="Int32" />
+          <Property Name="LinkedSvcAssetID" Type="Int32" />
+          <Property Name="IsArchived" Type="Int32" />
+          <Property Name="EmployeeManager" Type="Int32" />
+          <Property Name="EvaluationValueID" Type="Int32" />
+          <Property Name="EvaluationComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LinkedKWSolutionID" Type="Int32" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="KeyTask" Type="Int32" />
+          <Property Name="ParentTaskBoardFolderID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CustomerFieldTrackExt">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+            <PropertyRef Name="BugID" />
+            <PropertyRef Name="SequenceNo" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="BugID" Type="Int32" Nullable="false" />
+          <Property Name="SequenceNo" Type="Int32" Nullable="false" />
+          <Property Name="Custom_1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Desc_Custom_1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Desc_Custom_2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Desc_Custom_3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Status_Custom_1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Status_Custom_2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_201" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_202" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_203" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_204" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_205" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_206" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_207" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_208" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_301" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_302" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_303" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_304" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_305" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_306" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_307" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_308" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Desc_Custom_1_Double" Type="Double" />
+          <Property Name="Desc_Custom_1_Int" Type="Int32" />
+          <Property Name="Desc_Custom_1_Date" Type="DateTime" Precision="3" />
+          <Property Name="Desc_Custom_2_Double" Type="Double" />
+          <Property Name="Desc_Custom_2_Int" Type="Int32" />
+          <Property Name="Desc_Custom_2_Date" Type="DateTime" Precision="3" />
+          <Property Name="Desc_Custom_3_Double" Type="Double" />
+          <Property Name="Desc_Custom_3_Int" Type="Int32" />
+          <Property Name="Desc_Custom_3_Date" Type="DateTime" Precision="3" />
+          <Property Name="Custom_9Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_10Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_11Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_12Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_209Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_210Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_211Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_212Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_309Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_310Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_311Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_312Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_11" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_12" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_209" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_210" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_211" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_212" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_309" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_310" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_311" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_312" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CustomerFieldTrackExt2">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+            <PropertyRef Name="IssueID" />
+            <PropertyRef Name="PageNumber" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="IssueID" Type="Int32" Nullable="false" />
+          <Property Name="PageNumber" Type="Int32" Nullable="false" />
+          <Property Name="Custom_1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_9Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_10Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_11Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_12Ucd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_11" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom_12" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KWAttachments">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+            <PropertyRef Name="AttachmentID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="AttachmentID" Type="Int32" Nullable="false" />
+          <Property Name="AttachmentTypeID" Type="Int32" />
+          <Property Name="IssueID" Type="Int32" />
+          <Property Name="AttachmentTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="CreatedByID" Type="Int32" />
+          <Property Name="DateModified" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedByID" Type="Int32" />
+          <Property Name="AttachmentFileID" Type="Int32" />
+          <Property Name="AttachmentFileName" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="AttachmentFolderID" Type="Int32" />
+          <Property Name="AttachmentVersionNo" Type="Int32" />
+          <Property Name="LastCheckOutBy" Type="Int32" />
+          <Property Name="LastCheckOutDate" Type="DateTime" Precision="3" />
+          <Property Name="CheckOutPath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LastCheckInDate" Type="DateTime" Precision="3" />
+          <Property Name="LastCheckInBy" Type="Int32" />
+          <Property Name="IssueTypeID" Type="Int32" />
+          <Property Name="AttachmentProjectID" Type="Int32" />
+          <Property Name="AttachmentDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="IfSavedtoProjMaster" Type="Int32" />
+          <Property Name="CreatedFromSiteID" Type="Int32" />
+          <Property Name="OfflineFileID" Type="Int32" />
+          <Property Name="LinkedIdeaID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TemplateFileID" Type="Int32" />
+          <Property Name="IdeaProcessStatus" Type="Int32" />
+          <Property Name="IdeaPageCount" Type="Int32" />
+          <Property Name="EnterTime" Type="DateTime" Precision="3" />
+          <Property Name="ProcessStartTime" Type="DateTime" Precision="3" />
+          <Property Name="ProcessEndTime" Type="DateTime" Precision="3" />
+          <Property Name="IdeaErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HyperLinkInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ParentItemID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LogIn">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HomePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Login1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AccountStatus" Type="Int32" />
+          <Property Name="DateAccountCreated" Type="DateTime" Precision="3" />
+          <Property Name="DateAccountClosed" Type="DateTime" Precision="3" />
+          <Property Name="IsManager" Type="Boolean" Nullable="false" />
+          <Property Name="IsActivePerson" Type="Boolean" Nullable="false" />
+          <Property Name="IsAdministrator" Type="Boolean" Nullable="false" />
+          <Property Name="IsInSampleProject" Type="Boolean" Nullable="false" />
+          <Property Name="IsSWiseUser" Type="Int32" />
+          <Property Name="IsSWiseLightUser" Type="Int32" />
+          <Property Name="Initial" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Pager" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PagerType" Type="Int32" />
+          <Property Name="PagerServiceProvider" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PagerEmailAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MobilePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileServiceProvider" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MobileEmailAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IfPalmByPassLogin" Type="Int32" />
+          <Property Name="PalmID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NumPerPalmPage" Type="Int32" />
+          <Property Name="NTLoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsAssetAdmin" Type="Int32" />
+          <Property Name="IsFormAdmin" Type="Int32" />
+          <Property Name="Fax" Type="Int32" />
+          <Property Name="TimeZoneID" Type="Int32" />
+          <Property Name="EmailSignature" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="BaseProjectID" Type="Int32" />
+          <Property Name="CompanyDivisionID" Type="Int32" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductAccessID" Type="Int32" />
+          <Property Name="UseOwnAddress" Type="Int32" />
+          <Property Name="FaxNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LicenseType" Type="Int32" />
+          <Property Name="IsHDeskUser" Type="Int32" />
+          <Property Name="IsHDeskLightUser" Type="Int32" />
+          <Property Name="PagerUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccessDPlusAdmin" Type="Int32" />
+          <Property Name="AccessDPlusAnalysis" Type="Int32" />
+          <Property Name="DomesticCountries" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IfPersonalAddress4Quote" Type="Int32" />
+          <Property Name="IfPersonalFax4Phone" Type="Int32" />
+          <Property Name="IfPersonalPhone4Fax" Type="Int32" />
+          <Property Name="NeedToEditOwnWorkHours" Type="Int32" />
+          <Property Name="WorkScheduleID" Type="Int32" />
+          <Property Name="IsActiveDevTrackUser" Type="Int32" />
+          <Property Name="IsActiveDevTestUser" Type="Int32" />
+          <Property Name="UpdateNo" Type="Int32" />
+          <Property Name="SystemAdminAccountID" Type="Int32" />
+          <Property Name="IsActiveDevPlanUser" Type="Int32" />
+          <Property Name="ScopeID" Type="Int32" />
+          <Property Name="IsActiveTimeSheetUser" Type="Int32" />
+          <Property Name="TimeSheetProject" Type="Int32" />
+          <Property Name="ShortCutScopeID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActiveDevTimeUser" Type="Int32" />
+          <Property Name="SysDivID" Type="Int32" />
+          <Property Name="IsSysDivAdministrator" Type="Int32" />
+          <Property Name="SWLicenseType" Type="Int32" />
+          <Property Name="HDLicenseType" Type="Int32" />
+          <Property Name="HSCompanyID" Type="Int32" />
+          <Property Name="IsHSCompanyAdministrator" Type="Int32" />
+          <Property Name="IsActiveKnowledgeWiseUser" Type="Int32" />
+          <Property Name="MaxUnit" Type="Int32" />
+          <Property Name="IsActiveDevSpecUser" Type="Int32" />
+          <Property Name="IsActiveAddDevTestUser" Type="Int32" />
+          <Property Name="AddDevTestLicType" Type="Int32" />
+          <Property Name="IsDevTestMappingUser" Type="Int32" />
+          <Property Name="CanPerformOutlookSync" Type="Int32" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HolidayScheduleID" Type="Int32" />
+          <Property Name="PortfolioProjectAdmin" Type="Int32" />
+          <Property Name="PasswordLocked" Type="Int32" />
+          <Property Name="PasswordLockedTime" Type="DateTime" Precision="3" />
+          <Property Name="PasswordUnlockTime" Type="DateTime" Precision="3" />
+          <Property Name="PasswordResetOption" Type="Int32" />
+          <Property Name="UserAccountType" Type="Int32" />
+          <Property Name="UserAccountExpirationDate" Type="DateTime" Precision="3" />
+          <Property Name="LoginFailedTimes" Type="Int32" />
+          <Property Name="PasswordResetTime" Type="DateTime" Precision="3" />
+          <Property Name="PasswordStartTime" Type="DateTime" Precision="3" />
+          <Property Name="CanUseDTClient" Type="Int32" />
+          <Property Name="CanUseMyDevSuite" Type="Int32" />
+          <Property Name="DevSuiteSysAdminAccountID" Type="Int32" />
+          <Property Name="APIAccessToken" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsLocked" Type="Int32" />
+          <Property Name="NumOfTries" Type="Int32" />
+          <Property Name="DateLastLoginTry" Type="DateTime" Precision="3" />
+          <Property Name="IsActivePPMUser" Type="Int32" />
+          <Property Name="JobRoleID" Type="Int32" />
+          <Property Name="LastLoggedNotifyID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LastLoggedDeviceID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LastLoggedDeviceType" Type="Int32" />
+          <Property Name="IfAppLogged" Type="Int32" />
+          <Property Name="OldPassword1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OldPassword2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OldPassword3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OldPassword4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OldPassword5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IfPasswordIsTemp" Type="Int32" />
+          <Property Name="PasswordChangeTime" Type="DateTime" Precision="3" />
+          <Property Name="WeChatID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="WorkStatusID" Type="Int32" />
+          <Property Name="AutoResponderMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AutoResponderStartDate" Type="DateTime" Precision="3" />
+          <Property Name="AutoResponderEndDate" Type="DateTime" Precision="3" />
+          <Property Name="IsPeerTimeUser" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="GXX_DSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bug" EntityType="Self.Bug" />
+          <EntitySet Name="CustomerFieldTrackExt" EntityType="Self.CustomerFieldTrackExt" />
+          <EntitySet Name="CustomerFieldTrackExt2" EntityType="Self.CustomerFieldTrackExt2" />
+          <EntitySet Name="KWAttachments" EntityType="Self.KWAttachments" />
+          <EntitySet Name="LogIn" EntityType="Self.LogIn" />
+          <EntitySet Name="ProgressStatusTypes" EntityType="GXX_DSModel.ProgressStatusTypes" />
+        </EntityContainer>
+        <EntityType Name="ProgressStatusTypes">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+            <PropertyRef Name="ProgressStatusID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="ProgressStatusID" Type="Int32" Nullable="false" />
+          <Property Name="ProgressStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="Double" />
+          <Property Name="CanBeInitialState" Type="Int32" />
+          <Property Name="CanBeCloseState" Type="Int32" />
+          <Property Name="CanBeReopenState" Type="Int32" />
+          <Property Name="DefaultOwnerID" Type="Int32" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="CustomerAccess" Type="Int32" />
+          <Property Name="IfResolved" Type="Int32" />
+          <Property Name="IfResponded" Type="Int32" />
+          <Property Name="DisplayOrder" Type="Int32" />
+          <Property Name="IfSetSLAStartTime" Type="Int32" />
+          <Property Name="IfClosed" Type="Int32" />
+          <Property Name="NeedIdentityConfirmation" Type="Int32" />
+          <Property Name="IfDevTimeDefaultNew" Type="Int32" />
+          <Property Name="SetTimeToZero" Type="Int32" />
+          <Property Name="AddTimeRemain" Type="Int32" />
+          <Property Name="HSCompanyID" Type="Int32" />
+          <Property Name="DefaultOwnerID4Unassigned" Type="Int32" />
+          <Property Name="DefaultOwnerID4NonAppl" Type="Int32" />
+          <Property Name="DefaultOwner4Appl" Type="Int32" />
+          <Property Name="DefaultOwner4NonAppl" Type="Int32" />
+          <Property Name="ApplicableToRespond" Type="Int32" />
+          <Property Name="ApplicableToResolve" Type="Int32" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IfRestored" Type="Int32" />
+          <Property Name="ApplicableToRestore" Type="Int32" />
+          <Property Name="SetResolved4WebConversation" Type="Int32" />
+          <Property Name="ConfirmationMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdentityConfirmMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GoToPrevStateOption" Type="Int32" />
+          <Property Name="IfEnableUserEvaluation" Type="Int32" />
+          <Property Name="OwnerMustBeAssigned" Type="Int32" />
+          <Property Name="WorkflowTypeOption" Type="Int32" />
+          <Property Name="IfDefaultOwner4SamePrevious" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GXX_DSModelStoreContainer" CdmEntityContainer="GXX_DSEntities">
+          <EntitySetMapping Name="Bug">
+            <EntityTypeMapping TypeName="GXX_DSModel.Bug">
+              <MappingFragment StoreEntitySet="Bug">
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="BugID" ColumnName="BugID" />
+                <ScalarProperty Name="ProblemID" ColumnName="ProblemID" />
+                <ScalarProperty Name="BugTitle" ColumnName="BugTitle" />
+                <ScalarProperty Name="CreatedTypeID" ColumnName="CreatedTypeID" />
+                <ScalarProperty Name="PrevBugIDIfReopen" ColumnName="PrevBugIDIfReopen" />
+                <ScalarProperty Name="CreatedByPerson" ColumnName="CreatedByPerson" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="CurrentOwner" ColumnName="CurrentOwner" />
+                <ScalarProperty Name="ProgressStatusID" ColumnName="ProgressStatusID" />
+                <ScalarProperty Name="AssignedByPersonID" ColumnName="AssignedByPersonID" />
+                <ScalarProperty Name="DateAssigned" ColumnName="DateAssigned" />
+                <ScalarProperty Name="ClosedByPerson" ColumnName="ClosedByPerson" />
+                <ScalarProperty Name="CloseStatusID" ColumnName="CloseStatusID" />
+                <ScalarProperty Name="DateClosed" ColumnName="DateClosed" />
+                <ScalarProperty Name="CrntPriorityID" ColumnName="CrntPriorityID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IfClosed" ColumnName="IfClosed" />
+                <ScalarProperty Name="CrntOriginTypeID" ColumnName="CrntOriginTypeID" />
+                <ScalarProperty Name="CrntBugTypeID" ColumnName="CrntBugTypeID" />
+                <ScalarProperty Name="NoOfHistories" ColumnName="NoOfHistories" />
+                <ScalarProperty Name="LockOwner" ColumnName="LockOwner" />
+                <ScalarProperty Name="CrntPlatformID" ColumnName="CrntPlatformID" />
+                <ScalarProperty Name="CrntVersion" ColumnName="CrntVersion" />
+                <ScalarProperty Name="CrntVersionID" ColumnName="CrntVersionID" />
+                <ScalarProperty Name="TargetReleaseID" ColumnName="TargetReleaseID" />
+                <ScalarProperty Name="TargetDate" ColumnName="TargetDate" />
+                <ScalarProperty Name="EstimatedHours" ColumnName="EstimatedHours" />
+                <ScalarProperty Name="ActualHours" ColumnName="ActualHours" />
+                <ScalarProperty Name="DateFixed" ColumnName="DateFixed" />
+                <ScalarProperty Name="CrntForwardTypeID" ColumnName="CrntForwardTypeID" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="IsSharedIssue" ColumnName="IsSharedIssue" />
+                <ScalarProperty Name="CrntGroupID" ColumnName="CrntGroupID" />
+                <ScalarProperty Name="PlanedStartDate" ColumnName="PlanedStartDate" />
+                <ScalarProperty Name="PlanedEndDate" ColumnName="PlanedEndDate" />
+                <ScalarProperty Name="CrntFolderID" ColumnName="CrntFolderID" />
+                <ScalarProperty Name="LastUpdateNo" ColumnName="LastUpdateNo" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="NoOfResponses" ColumnName="NoOfResponses" />
+                <ScalarProperty Name="AvailableToCustomer" ColumnName="AvailableToCustomer" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="PublishedKnowledgeID" ColumnName="PublishedKnowledgeID" />
+                <ScalarProperty Name="EmailStatusBits" ColumnName="EmailStatusBits" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateLastOpenMail" ColumnName="DateLastOpenMail" />
+                <ScalarProperty Name="DateLastUntouchMail" ColumnName="DateLastUntouchMail" />
+                <ScalarProperty Name="AccessCustomerMethod" ColumnName="AccessCustomerMethod" />
+                <ScalarProperty Name="ServicePlanID" ColumnName="ServicePlanID" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="Ready4Billing" ColumnName="Ready4Billing" />
+                <ScalarProperty Name="IfClosedByCustomer" ColumnName="IfClosedByCustomer" />
+                <ScalarProperty Name="DateLastDueDateMail" ColumnName="DateLastDueDateMail" />
+                <ScalarProperty Name="EstimatedCost" ColumnName="EstimatedCost" />
+                <ScalarProperty Name="EnableLiveSupport" ColumnName="EnableLiveSupport" />
+                <ScalarProperty Name="IfFinishDateLinked" ColumnName="IfFinishDateLinked" />
+                <ScalarProperty Name="TotalSale" ColumnName="TotalSale" />
+                <ScalarProperty Name="SalesOrderTemplateID" ColumnName="SalesOrderTemplateID" />
+                <ScalarProperty Name="SalesPossibility" ColumnName="SalesPossibility" />
+                <ScalarProperty Name="SalesStatusID" ColumnName="SalesStatusID" />
+                <ScalarProperty Name="ExpectedPODate" ColumnName="ExpectedPODate" />
+                <ScalarProperty Name="PrimaryQuoteID" ColumnName="PrimaryQuoteID" />
+                <ScalarProperty Name="PODate" ColumnName="PODate" />
+                <ScalarProperty Name="SubProjectID" ColumnName="SubProjectID" />
+                <ScalarProperty Name="PriorityValue" ColumnName="PriorityValue" />
+                <ScalarProperty Name="PriorityOrder" ColumnName="PriorityOrder" />
+                <ScalarProperty Name="LinkedMSProjectTaskID" ColumnName="LinkedMSProjectTaskID" />
+                <ScalarProperty Name="LastStatusDate" ColumnName="LastStatusDate" />
+                <ScalarProperty Name="SalesLostDate" ColumnName="SalesLostDate" />
+                <ScalarProperty Name="InstallSiteID" ColumnName="InstallSiteID" />
+                <ScalarProperty Name="PrimaryEventID" ColumnName="PrimaryEventID" />
+                <ScalarProperty Name="AttachmentID" ColumnName="AttachmentID" />
+                <ScalarProperty Name="AttachmentTypeID" ColumnName="AttachmentTypeID" />
+                <ScalarProperty Name="IfBillable" ColumnName="IfBillable" />
+                <ScalarProperty Name="PrimaryContactID" ColumnName="PrimaryContactID" />
+                <ScalarProperty Name="ExternalBugID" ColumnName="ExternalBugID" />
+                <ScalarProperty Name="SalesPersonID" ColumnName="SalesPersonID" />
+                <ScalarProperty Name="TotalNetSales" ColumnName="TotalNetSales" />
+                <ScalarProperty Name="IfAssetLink4SalesProcessed" ColumnName="IfAssetLink4SalesProcessed" />
+                <ScalarProperty Name="ActiveStartDate" ColumnName="ActiveStartDate" />
+                <ScalarProperty Name="ActiveEndDate" ColumnName="ActiveEndDate" />
+                <ScalarProperty Name="IfNewSales" ColumnName="IfNewSales" />
+                <ScalarProperty Name="IfResponseTimeLinked" ColumnName="IfResponseTimeLinked" />
+                <ScalarProperty Name="PlanResponseTimeID" ColumnName="PlanResponseTimeID" />
+                <ScalarProperty Name="TimeResponded" ColumnName="TimeResponded" />
+                <ScalarProperty Name="TimeResolved" ColumnName="TimeResolved" />
+                <ScalarProperty Name="LostToCompetitorID" ColumnName="LostToCompetitorID" />
+                <ScalarProperty Name="LinkedQATestKnowledgeID" ColumnName="LinkedQATestKnowledgeID" />
+                <ScalarProperty Name="LinkedQAIssueTemplateID" ColumnName="LinkedQAIssueTemplateID" />
+                <ScalarProperty Name="IssueType" ColumnName="IssueType" />
+                <ScalarProperty Name="CompetitorSurveyTmpltID" ColumnName="CompetitorSurveyTmpltID" />
+                <ScalarProperty Name="CreatedFromWebClickID" ColumnName="CreatedFromWebClickID" />
+                <ScalarProperty Name="LinkedFormTemplateID" ColumnName="LinkedFormTemplateID" />
+                <ScalarProperty Name="ParentIfParent" ColumnName="ParentIfParent" />
+                <ScalarProperty Name="ParentIssueID" ColumnName="ParentIssueID" />
+                <ScalarProperty Name="LinkedShortCutIssueID" ColumnName="LinkedShortCutIssueID" />
+                <ScalarProperty Name="LinkedSalesTotal" ColumnName="LinkedSalesTotal" />
+                <ScalarProperty Name="SubmittedFromEmail" ColumnName="SubmittedFromEmail" />
+                <ScalarProperty Name="DynamicOwnerFolderID" ColumnName="DynamicOwnerFolderID" />
+                <ScalarProperty Name="RequiredResponseTime" ColumnName="RequiredResponseTime" />
+                <ScalarProperty Name="RequiredResolveTime" ColumnName="RequiredResolveTime" />
+                <ScalarProperty Name="ActualResponseTime" ColumnName="ActualResponseTime" />
+                <ScalarProperty Name="ActualResolveTime" ColumnName="ActualResolveTime" />
+                <ScalarProperty Name="ActualResponseMinutes" ColumnName="ActualResponseMinutes" />
+                <ScalarProperty Name="ActualResolveMinutes" ColumnName="ActualResolveMinutes" />
+                <ScalarProperty Name="SLAStartTime" ColumnName="SLAStartTime" />
+                <ScalarProperty Name="IfSLAException" ColumnName="IfSLAException" />
+                <ScalarProperty Name="LastTransitionID" ColumnName="LastTransitionID" />
+                <ScalarProperty Name="IfNewRequest" ColumnName="IfNewRequest" />
+                <ScalarProperty Name="RequestTime" ColumnName="RequestTime" />
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="LockedByPersonID" ColumnName="LockedByPersonID" />
+                <ScalarProperty Name="IsNotAcknowledged" ColumnName="IsNotAcknowledged" />
+                <ScalarProperty Name="WorkflowID" ColumnName="WorkflowID" />
+                <ScalarProperty Name="IssueTypeID" ColumnName="IssueTypeID" />
+                <ScalarProperty Name="ReleaseBuildID" ColumnName="ReleaseBuildID" />
+                <ScalarProperty Name="TimeSpent" ColumnName="TimeSpent" />
+                <ScalarProperty Name="TimeRemain" ColumnName="TimeRemain" />
+                <ScalarProperty Name="IssueFinishDate" ColumnName="IssueFinishDate" />
+                <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+                <ScalarProperty Name="CurrencyRate" ColumnName="CurrencyRate" />
+                <ScalarProperty Name="ProblemDescriptionUcd" ColumnName="ProblemDescriptionUcd" />
+                <ScalarProperty Name="CloseDescriptionUcd" ColumnName="CloseDescriptionUcd" />
+                <ScalarProperty Name="LinkedSpecID" ColumnName="LinkedSpecID" />
+                <ScalarProperty Name="DevSpecSubProjectID" ColumnName="DevSpecSubProjectID" />
+                <ScalarProperty Name="LinkedModuleID" ColumnName="LinkedModuleID" />
+                <ScalarProperty Name="BacklogSubProjectID" ColumnName="BacklogSubProjectID" />
+                <ScalarProperty Name="LinkedDefectSpecID" ColumnName="LinkedDefectSpecID" />
+                <ScalarProperty Name="BacklogItemPriorityValue" ColumnName="BacklogItemPriorityValue" />
+                <ScalarProperty Name="BacklogItemOrder" ColumnName="BacklogItemOrder" />
+                <ScalarProperty Name="SpecificationPoint" ColumnName="SpecificationPoint" />
+                <ScalarProperty Name="CloseDescription" ColumnName="CloseDescription" />
+                <ScalarProperty Name="ProblemDescription" ColumnName="ProblemDescription" />
+                <ScalarProperty Name="ContactMemo" ColumnName="ContactMemo" />
+                <ScalarProperty Name="AnswerToCustomer" ColumnName="AnswerToCustomer" />
+                <ScalarProperty Name="TaskPlannedStartDate" ColumnName="TaskPlannedStartDate" />
+                <ScalarProperty Name="TaskPlannedFinishDate" ColumnName="TaskPlannedFinishDate" />
+                <ScalarProperty Name="LinkedImplementationCopyID" ColumnName="LinkedImplementationCopyID" />
+                <ScalarProperty Name="IfRestoreTimeLinked" ColumnName="IfRestoreTimeLinked" />
+                <ScalarProperty Name="RequiredRestoreTime" ColumnName="RequiredRestoreTime" />
+                <ScalarProperty Name="ActualRestoreTime" ColumnName="ActualRestoreTime" />
+                <ScalarProperty Name="ActualRestoreMinutes" ColumnName="ActualRestoreMinutes" />
+                <ScalarProperty Name="PlannedRestoreTime" ColumnName="PlannedRestoreTime" />
+                <ScalarProperty Name="CWPSourceIP" ColumnName="CWPSourceIP" />
+                <ScalarProperty Name="CWPSourceName" ColumnName="CWPSourceName" />
+                <ScalarProperty Name="PrimaryResource" ColumnName="PrimaryResource" />
+                <ScalarProperty Name="EstTotal" ColumnName="EstTotal" />
+                <ScalarProperty Name="IfCommitted" ColumnName="IfCommitted" />
+                <ScalarProperty Name="ParentStoryItemID" ColumnName="ParentStoryItemID" />
+                <ScalarProperty Name="IssueActualStartDate" ColumnName="IssueActualStartDate" />
+                <ScalarProperty Name="EmployeeOnBehalfOf" ColumnName="EmployeeOnBehalfOf" />
+                <ScalarProperty Name="LastModifiedByPerson" ColumnName="LastModifiedByPerson" />
+                <ScalarProperty Name="ProductVersionOption" ColumnName="ProductVersionOption" />
+                <ScalarProperty Name="LinkedSvcAssetID" ColumnName="LinkedSvcAssetID" />
+                <ScalarProperty Name="IsArchived" ColumnName="IsArchived" />
+                <ScalarProperty Name="EmployeeManager" ColumnName="EmployeeManager" />
+                <ScalarProperty Name="EvaluationValueID" ColumnName="EvaluationValueID" />
+                <ScalarProperty Name="EvaluationComments" ColumnName="EvaluationComments" />
+                <ScalarProperty Name="LinkedKWSolutionID" ColumnName="LinkedKWSolutionID" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="KeyTask" ColumnName="KeyTask" />
+                <ScalarProperty Name="ParentTaskBoardFolderID" ColumnName="ParentTaskBoardFolderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerFieldTrackExt">
+            <EntityTypeMapping TypeName="GXX_DSModel.CustomerFieldTrackExt">
+              <MappingFragment StoreEntitySet="CustomerFieldTrackExt">
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="BugID" ColumnName="BugID" />
+                <ScalarProperty Name="SequenceNo" ColumnName="SequenceNo" />
+                <ScalarProperty Name="Custom_1" ColumnName="Custom_1" />
+                <ScalarProperty Name="Custom_2" ColumnName="Custom_2" />
+                <ScalarProperty Name="Custom_3" ColumnName="Custom_3" />
+                <ScalarProperty Name="Custom_4" ColumnName="Custom_4" />
+                <ScalarProperty Name="Custom_5" ColumnName="Custom_5" />
+                <ScalarProperty Name="Custom_6" ColumnName="Custom_6" />
+                <ScalarProperty Name="Custom_7" ColumnName="Custom_7" />
+                <ScalarProperty Name="Custom_8" ColumnName="Custom_8" />
+                <ScalarProperty Name="Desc_Custom_1" ColumnName="Desc_Custom_1" />
+                <ScalarProperty Name="Desc_Custom_2" ColumnName="Desc_Custom_2" />
+                <ScalarProperty Name="Desc_Custom_3" ColumnName="Desc_Custom_3" />
+                <ScalarProperty Name="Status_Custom_1" ColumnName="Status_Custom_1" />
+                <ScalarProperty Name="Status_Custom_2" ColumnName="Status_Custom_2" />
+                <ScalarProperty Name="Custom_201" ColumnName="Custom_201" />
+                <ScalarProperty Name="Custom_202" ColumnName="Custom_202" />
+                <ScalarProperty Name="Custom_203" ColumnName="Custom_203" />
+                <ScalarProperty Name="Custom_204" ColumnName="Custom_204" />
+                <ScalarProperty Name="Custom_205" ColumnName="Custom_205" />
+                <ScalarProperty Name="Custom_206" ColumnName="Custom_206" />
+                <ScalarProperty Name="Custom_207" ColumnName="Custom_207" />
+                <ScalarProperty Name="Custom_208" ColumnName="Custom_208" />
+                <ScalarProperty Name="Custom_301" ColumnName="Custom_301" />
+                <ScalarProperty Name="Custom_302" ColumnName="Custom_302" />
+                <ScalarProperty Name="Custom_303" ColumnName="Custom_303" />
+                <ScalarProperty Name="Custom_304" ColumnName="Custom_304" />
+                <ScalarProperty Name="Custom_305" ColumnName="Custom_305" />
+                <ScalarProperty Name="Custom_306" ColumnName="Custom_306" />
+                <ScalarProperty Name="Custom_307" ColumnName="Custom_307" />
+                <ScalarProperty Name="Custom_308" ColumnName="Custom_308" />
+                <ScalarProperty Name="Desc_Custom_1_Double" ColumnName="Desc_Custom_1_Double" />
+                <ScalarProperty Name="Desc_Custom_1_Int" ColumnName="Desc_Custom_1_Int" />
+                <ScalarProperty Name="Desc_Custom_1_Date" ColumnName="Desc_Custom_1_Date" />
+                <ScalarProperty Name="Desc_Custom_2_Double" ColumnName="Desc_Custom_2_Double" />
+                <ScalarProperty Name="Desc_Custom_2_Int" ColumnName="Desc_Custom_2_Int" />
+                <ScalarProperty Name="Desc_Custom_2_Date" ColumnName="Desc_Custom_2_Date" />
+                <ScalarProperty Name="Desc_Custom_3_Double" ColumnName="Desc_Custom_3_Double" />
+                <ScalarProperty Name="Desc_Custom_3_Int" ColumnName="Desc_Custom_3_Int" />
+                <ScalarProperty Name="Desc_Custom_3_Date" ColumnName="Desc_Custom_3_Date" />
+                <ScalarProperty Name="Custom_9Ucd" ColumnName="Custom_9Ucd" />
+                <ScalarProperty Name="Custom_10Ucd" ColumnName="Custom_10Ucd" />
+                <ScalarProperty Name="Custom_11Ucd" ColumnName="Custom_11Ucd" />
+                <ScalarProperty Name="Custom_12Ucd" ColumnName="Custom_12Ucd" />
+                <ScalarProperty Name="Custom_209Ucd" ColumnName="Custom_209Ucd" />
+                <ScalarProperty Name="Custom_210Ucd" ColumnName="Custom_210Ucd" />
+                <ScalarProperty Name="Custom_211Ucd" ColumnName="Custom_211Ucd" />
+                <ScalarProperty Name="Custom_212Ucd" ColumnName="Custom_212Ucd" />
+                <ScalarProperty Name="Custom_309Ucd" ColumnName="Custom_309Ucd" />
+                <ScalarProperty Name="Custom_310Ucd" ColumnName="Custom_310Ucd" />
+                <ScalarProperty Name="Custom_311Ucd" ColumnName="Custom_311Ucd" />
+                <ScalarProperty Name="Custom_312Ucd" ColumnName="Custom_312Ucd" />
+                <ScalarProperty Name="Custom_9" ColumnName="Custom_9" />
+                <ScalarProperty Name="Custom_10" ColumnName="Custom_10" />
+                <ScalarProperty Name="Custom_11" ColumnName="Custom_11" />
+                <ScalarProperty Name="Custom_12" ColumnName="Custom_12" />
+                <ScalarProperty Name="Custom_209" ColumnName="Custom_209" />
+                <ScalarProperty Name="Custom_210" ColumnName="Custom_210" />
+                <ScalarProperty Name="Custom_211" ColumnName="Custom_211" />
+                <ScalarProperty Name="Custom_212" ColumnName="Custom_212" />
+                <ScalarProperty Name="Custom_309" ColumnName="Custom_309" />
+                <ScalarProperty Name="Custom_310" ColumnName="Custom_310" />
+                <ScalarProperty Name="Custom_311" ColumnName="Custom_311" />
+                <ScalarProperty Name="Custom_312" ColumnName="Custom_312" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerFieldTrackExt2">
+            <EntityTypeMapping TypeName="GXX_DSModel.CustomerFieldTrackExt2">
+              <MappingFragment StoreEntitySet="CustomerFieldTrackExt2">
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="IssueID" ColumnName="IssueID" />
+                <ScalarProperty Name="PageNumber" ColumnName="PageNumber" />
+                <ScalarProperty Name="Custom_1" ColumnName="Custom_1" />
+                <ScalarProperty Name="Custom_2" ColumnName="Custom_2" />
+                <ScalarProperty Name="Custom_3" ColumnName="Custom_3" />
+                <ScalarProperty Name="Custom_4" ColumnName="Custom_4" />
+                <ScalarProperty Name="Custom_5" ColumnName="Custom_5" />
+                <ScalarProperty Name="Custom_6" ColumnName="Custom_6" />
+                <ScalarProperty Name="Custom_7" ColumnName="Custom_7" />
+                <ScalarProperty Name="Custom_8" ColumnName="Custom_8" />
+                <ScalarProperty Name="Custom_9Ucd" ColumnName="Custom_9Ucd" />
+                <ScalarProperty Name="Custom_10Ucd" ColumnName="Custom_10Ucd" />
+                <ScalarProperty Name="Custom_11Ucd" ColumnName="Custom_11Ucd" />
+                <ScalarProperty Name="Custom_12Ucd" ColumnName="Custom_12Ucd" />
+                <ScalarProperty Name="Custom_9" ColumnName="Custom_9" />
+                <ScalarProperty Name="Custom_10" ColumnName="Custom_10" />
+                <ScalarProperty Name="Custom_11" ColumnName="Custom_11" />
+                <ScalarProperty Name="Custom_12" ColumnName="Custom_12" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KWAttachments">
+            <EntityTypeMapping TypeName="GXX_DSModel.KWAttachments">
+              <MappingFragment StoreEntitySet="KWAttachments">
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="AttachmentID" ColumnName="AttachmentID" />
+                <ScalarProperty Name="AttachmentTypeID" ColumnName="AttachmentTypeID" />
+                <ScalarProperty Name="IssueID" ColumnName="IssueID" />
+                <ScalarProperty Name="AttachmentTitle" ColumnName="AttachmentTitle" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="AttachmentFileID" ColumnName="AttachmentFileID" />
+                <ScalarProperty Name="AttachmentFileName" ColumnName="AttachmentFileName" />
+                <ScalarProperty Name="AttachmentFolderID" ColumnName="AttachmentFolderID" />
+                <ScalarProperty Name="AttachmentVersionNo" ColumnName="AttachmentVersionNo" />
+                <ScalarProperty Name="LastCheckOutBy" ColumnName="LastCheckOutBy" />
+                <ScalarProperty Name="LastCheckOutDate" ColumnName="LastCheckOutDate" />
+                <ScalarProperty Name="CheckOutPath" ColumnName="CheckOutPath" />
+                <ScalarProperty Name="LastCheckInDate" ColumnName="LastCheckInDate" />
+                <ScalarProperty Name="LastCheckInBy" ColumnName="LastCheckInBy" />
+                <ScalarProperty Name="IssueTypeID" ColumnName="IssueTypeID" />
+                <ScalarProperty Name="AttachmentProjectID" ColumnName="AttachmentProjectID" />
+                <ScalarProperty Name="AttachmentDescription" ColumnName="AttachmentDescription" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="IfSavedtoProjMaster" ColumnName="IfSavedtoProjMaster" />
+                <ScalarProperty Name="CreatedFromSiteID" ColumnName="CreatedFromSiteID" />
+                <ScalarProperty Name="OfflineFileID" ColumnName="OfflineFileID" />
+                <ScalarProperty Name="LinkedIdeaID" ColumnName="LinkedIdeaID" />
+                <ScalarProperty Name="TemplateFileID" ColumnName="TemplateFileID" />
+                <ScalarProperty Name="IdeaProcessStatus" ColumnName="IdeaProcessStatus" />
+                <ScalarProperty Name="IdeaPageCount" ColumnName="IdeaPageCount" />
+                <ScalarProperty Name="EnterTime" ColumnName="EnterTime" />
+                <ScalarProperty Name="ProcessStartTime" ColumnName="ProcessStartTime" />
+                <ScalarProperty Name="ProcessEndTime" ColumnName="ProcessEndTime" />
+                <ScalarProperty Name="IdeaErrorMessage" ColumnName="IdeaErrorMessage" />
+                <ScalarProperty Name="HyperLinkInfo" ColumnName="HyperLinkInfo" />
+                <ScalarProperty Name="DisplayFileName" ColumnName="DisplayFileName" />
+                <ScalarProperty Name="ParentItemID" ColumnName="ParentItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogIn">
+            <EntityTypeMapping TypeName="GXX_DSModel.LogIn">
+              <MappingFragment StoreEntitySet="LogIn">
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="Login1" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="AccountStatus" ColumnName="AccountStatus" />
+                <ScalarProperty Name="DateAccountCreated" ColumnName="DateAccountCreated" />
+                <ScalarProperty Name="DateAccountClosed" ColumnName="DateAccountClosed" />
+                <ScalarProperty Name="IsManager" ColumnName="IsManager" />
+                <ScalarProperty Name="IsActivePerson" ColumnName="IsActivePerson" />
+                <ScalarProperty Name="IsAdministrator" ColumnName="IsAdministrator" />
+                <ScalarProperty Name="IsInSampleProject" ColumnName="IsInSampleProject" />
+                <ScalarProperty Name="IsSWiseUser" ColumnName="IsSWiseUser" />
+                <ScalarProperty Name="IsSWiseLightUser" ColumnName="IsSWiseLightUser" />
+                <ScalarProperty Name="Initial" ColumnName="Initial" />
+                <ScalarProperty Name="Pager" ColumnName="Pager" />
+                <ScalarProperty Name="PagerType" ColumnName="PagerType" />
+                <ScalarProperty Name="PagerServiceProvider" ColumnName="PagerServiceProvider" />
+                <ScalarProperty Name="PagerEmailAddress" ColumnName="PagerEmailAddress" />
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="MobileServiceProvider" ColumnName="MobileServiceProvider" />
+                <ScalarProperty Name="MobileEmailAddress" ColumnName="MobileEmailAddress" />
+                <ScalarProperty Name="IfPalmByPassLogin" ColumnName="IfPalmByPassLogin" />
+                <ScalarProperty Name="PalmID" ColumnName="PalmID" />
+                <ScalarProperty Name="NumPerPalmPage" ColumnName="NumPerPalmPage" />
+                <ScalarProperty Name="NTLoginName" ColumnName="NTLoginName" />
+                <ScalarProperty Name="IsAssetAdmin" ColumnName="IsAssetAdmin" />
+                <ScalarProperty Name="IsFormAdmin" ColumnName="IsFormAdmin" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="TimeZoneID" ColumnName="TimeZoneID" />
+                <ScalarProperty Name="EmailSignature" ColumnName="EmailSignature" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="BaseProjectID" ColumnName="BaseProjectID" />
+                <ScalarProperty Name="CompanyDivisionID" ColumnName="CompanyDivisionID" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="ProductAccessID" ColumnName="ProductAccessID" />
+                <ScalarProperty Name="UseOwnAddress" ColumnName="UseOwnAddress" />
+                <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+                <ScalarProperty Name="LicenseType" ColumnName="LicenseType" />
+                <ScalarProperty Name="IsHDeskUser" ColumnName="IsHDeskUser" />
+                <ScalarProperty Name="IsHDeskLightUser" ColumnName="IsHDeskLightUser" />
+                <ScalarProperty Name="PagerUserID" ColumnName="PagerUserID" />
+                <ScalarProperty Name="MobileUserID" ColumnName="MobileUserID" />
+                <ScalarProperty Name="AccessDPlusAdmin" ColumnName="AccessDPlusAdmin" />
+                <ScalarProperty Name="AccessDPlusAnalysis" ColumnName="AccessDPlusAnalysis" />
+                <ScalarProperty Name="DomesticCountries" ColumnName="DomesticCountries" />
+                <ScalarProperty Name="IfPersonalAddress4Quote" ColumnName="IfPersonalAddress4Quote" />
+                <ScalarProperty Name="IfPersonalFax4Phone" ColumnName="IfPersonalFax4Phone" />
+                <ScalarProperty Name="IfPersonalPhone4Fax" ColumnName="IfPersonalPhone4Fax" />
+                <ScalarProperty Name="NeedToEditOwnWorkHours" ColumnName="NeedToEditOwnWorkHours" />
+                <ScalarProperty Name="WorkScheduleID" ColumnName="WorkScheduleID" />
+                <ScalarProperty Name="IsActiveDevTrackUser" ColumnName="IsActiveDevTrackUser" />
+                <ScalarProperty Name="IsActiveDevTestUser" ColumnName="IsActiveDevTestUser" />
+                <ScalarProperty Name="UpdateNo" ColumnName="UpdateNo" />
+                <ScalarProperty Name="SystemAdminAccountID" ColumnName="SystemAdminAccountID" />
+                <ScalarProperty Name="IsActiveDevPlanUser" ColumnName="IsActiveDevPlanUser" />
+                <ScalarProperty Name="ScopeID" ColumnName="ScopeID" />
+                <ScalarProperty Name="IsActiveTimeSheetUser" ColumnName="IsActiveTimeSheetUser" />
+                <ScalarProperty Name="TimeSheetProject" ColumnName="TimeSheetProject" />
+                <ScalarProperty Name="ShortCutScopeID" ColumnName="ShortCutScopeID" />
+                <ScalarProperty Name="IsActiveDevTimeUser" ColumnName="IsActiveDevTimeUser" />
+                <ScalarProperty Name="SysDivID" ColumnName="SysDivID" />
+                <ScalarProperty Name="IsSysDivAdministrator" ColumnName="IsSysDivAdministrator" />
+                <ScalarProperty Name="SWLicenseType" ColumnName="SWLicenseType" />
+                <ScalarProperty Name="HDLicenseType" ColumnName="HDLicenseType" />
+                <ScalarProperty Name="HSCompanyID" ColumnName="HSCompanyID" />
+                <ScalarProperty Name="IsHSCompanyAdministrator" ColumnName="IsHSCompanyAdministrator" />
+                <ScalarProperty Name="IsActiveKnowledgeWiseUser" ColumnName="IsActiveKnowledgeWiseUser" />
+                <ScalarProperty Name="MaxUnit" ColumnName="MaxUnit" />
+                <ScalarProperty Name="IsActiveDevSpecUser" ColumnName="IsActiveDevSpecUser" />
+                <ScalarProperty Name="IsActiveAddDevTestUser" ColumnName="IsActiveAddDevTestUser" />
+                <ScalarProperty Name="AddDevTestLicType" ColumnName="AddDevTestLicType" />
+                <ScalarProperty Name="IsDevTestMappingUser" ColumnName="IsDevTestMappingUser" />
+                <ScalarProperty Name="CanPerformOutlookSync" ColumnName="CanPerformOutlookSync" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="HolidayScheduleID" ColumnName="HolidayScheduleID" />
+                <ScalarProperty Name="PortfolioProjectAdmin" ColumnName="PortfolioProjectAdmin" />
+                <ScalarProperty Name="PasswordLocked" ColumnName="PasswordLocked" />
+                <ScalarProperty Name="PasswordLockedTime" ColumnName="PasswordLockedTime" />
+                <ScalarProperty Name="PasswordUnlockTime" ColumnName="PasswordUnlockTime" />
+                <ScalarProperty Name="PasswordResetOption" ColumnName="PasswordResetOption" />
+                <ScalarProperty Name="UserAccountType" ColumnName="UserAccountType" />
+                <ScalarProperty Name="UserAccountExpirationDate" ColumnName="UserAccountExpirationDate" />
+                <ScalarProperty Name="LoginFailedTimes" ColumnName="LoginFailedTimes" />
+                <ScalarProperty Name="PasswordResetTime" ColumnName="PasswordResetTime" />
+                <ScalarProperty Name="PasswordStartTime" ColumnName="PasswordStartTime" />
+                <ScalarProperty Name="CanUseDTClient" ColumnName="CanUseDTClient" />
+                <ScalarProperty Name="CanUseMyDevSuite" ColumnName="CanUseMyDevSuite" />
+                <ScalarProperty Name="DevSuiteSysAdminAccountID" ColumnName="DevSuiteSysAdminAccountID" />
+                <ScalarProperty Name="APIAccessToken" ColumnName="APIAccessToken" />
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="NumOfTries" ColumnName="NumOfTries" />
+                <ScalarProperty Name="DateLastLoginTry" ColumnName="DateLastLoginTry" />
+                <ScalarProperty Name="IsActivePPMUser" ColumnName="IsActivePPMUser" />
+                <ScalarProperty Name="JobRoleID" ColumnName="JobRoleID" />
+                <ScalarProperty Name="LastLoggedNotifyID" ColumnName="LastLoggedNotifyID" />
+                <ScalarProperty Name="LastLoggedDeviceID" ColumnName="LastLoggedDeviceID" />
+                <ScalarProperty Name="LastLoggedDeviceType" ColumnName="LastLoggedDeviceType" />
+                <ScalarProperty Name="IfAppLogged" ColumnName="IfAppLogged" />
+                <ScalarProperty Name="OldPassword1" ColumnName="OldPassword1" />
+                <ScalarProperty Name="OldPassword2" ColumnName="OldPassword2" />
+                <ScalarProperty Name="OldPassword3" ColumnName="OldPassword3" />
+                <ScalarProperty Name="OldPassword4" ColumnName="OldPassword4" />
+                <ScalarProperty Name="OldPassword5" ColumnName="OldPassword5" />
+                <ScalarProperty Name="IfPasswordIsTemp" ColumnName="IfPasswordIsTemp" />
+                <ScalarProperty Name="PasswordChangeTime" ColumnName="PasswordChangeTime" />
+                <ScalarProperty Name="WeChatID" ColumnName="WeChatID" />
+                <ScalarProperty Name="WorkStatusID" ColumnName="WorkStatusID" />
+                <ScalarProperty Name="AutoResponderMsg" ColumnName="AutoResponderMsg" />
+                <ScalarProperty Name="AutoResponderStartDate" ColumnName="AutoResponderStartDate" />
+                <ScalarProperty Name="AutoResponderEndDate" ColumnName="AutoResponderEndDate" />
+                <ScalarProperty Name="IsPeerTimeUser" ColumnName="IsPeerTimeUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProgressStatusTypes">
+            <EntityTypeMapping TypeName="GXX_DSModel.ProgressStatusTypes">
+              <MappingFragment StoreEntitySet="ProgressStatusTypes">
+                <ScalarProperty Name="IfDefaultOwner4SamePrevious" ColumnName="IfDefaultOwner4SamePrevious" />
+                <ScalarProperty Name="WorkflowTypeOption" ColumnName="WorkflowTypeOption" />
+                <ScalarProperty Name="OwnerMustBeAssigned" ColumnName="OwnerMustBeAssigned" />
+                <ScalarProperty Name="IfEnableUserEvaluation" ColumnName="IfEnableUserEvaluation" />
+                <ScalarProperty Name="GoToPrevStateOption" ColumnName="GoToPrevStateOption" />
+                <ScalarProperty Name="IdentityConfirmMsg" ColumnName="IdentityConfirmMsg" />
+                <ScalarProperty Name="ConfirmationMsg" ColumnName="ConfirmationMsg" />
+                <ScalarProperty Name="SetResolved4WebConversation" ColumnName="SetResolved4WebConversation" />
+                <ScalarProperty Name="ApplicableToRestore" ColumnName="ApplicableToRestore" />
+                <ScalarProperty Name="IfRestored" ColumnName="IfRestored" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="ApplicableToResolve" ColumnName="ApplicableToResolve" />
+                <ScalarProperty Name="ApplicableToRespond" ColumnName="ApplicableToRespond" />
+                <ScalarProperty Name="DefaultOwner4NonAppl" ColumnName="DefaultOwner4NonAppl" />
+                <ScalarProperty Name="DefaultOwner4Appl" ColumnName="DefaultOwner4Appl" />
+                <ScalarProperty Name="DefaultOwnerID4NonAppl" ColumnName="DefaultOwnerID4NonAppl" />
+                <ScalarProperty Name="DefaultOwnerID4Unassigned" ColumnName="DefaultOwnerID4Unassigned" />
+                <ScalarProperty Name="HSCompanyID" ColumnName="HSCompanyID" />
+                <ScalarProperty Name="AddTimeRemain" ColumnName="AddTimeRemain" />
+                <ScalarProperty Name="SetTimeToZero" ColumnName="SetTimeToZero" />
+                <ScalarProperty Name="IfDevTimeDefaultNew" ColumnName="IfDevTimeDefaultNew" />
+                <ScalarProperty Name="NeedIdentityConfirmation" ColumnName="NeedIdentityConfirmation" />
+                <ScalarProperty Name="IfClosed" ColumnName="IfClosed" />
+                <ScalarProperty Name="IfSetSLAStartTime" ColumnName="IfSetSLAStartTime" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="IfResponded" ColumnName="IfResponded" />
+                <ScalarProperty Name="IfResolved" ColumnName="IfResolved" />
+                <ScalarProperty Name="CustomerAccess" ColumnName="CustomerAccess" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="DefaultOwnerID" ColumnName="DefaultOwnerID" />
+                <ScalarProperty Name="CanBeReopenState" ColumnName="CanBeReopenState" />
+                <ScalarProperty Name="CanBeCloseState" ColumnName="CanBeCloseState" />
+                <ScalarProperty Name="CanBeInitialState" ColumnName="CanBeInitialState" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="ProgressStatusName" ColumnName="ProgressStatusName" />
+                <ScalarProperty Name="ProgressStatusID" ColumnName="ProgressStatusID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
