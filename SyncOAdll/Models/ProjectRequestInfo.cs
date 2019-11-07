@@ -39,11 +39,15 @@ namespace SyncOAdll
         public string MainProductName { get; set; }//主产品名称
         [DisplayName("产品等级")]
         public string ProductLevel { get; set; }//产品等级
+        [DisplayName("产品等级代码")]
+        public string ProductLevelCode { get; set; }//产品等级代码，写死（A级是0，B级是1，C级是2）
         [DisplayName("产品经理")]
         public string ProductManager { get; set; }//产品经理
         public string ProductManagerName { get; set; }//产品经理名称
         [DisplayName("产品归属")]
         public string ProductBelong { get; set; }// 产品归属
+        [DisplayName("产品归属代码")]
+        public string ProductBelongCode { get; set; }//产品归属代码
         [DisplayName("产品类型")]
         public string ProductType { get; set; }//产品类型
         [DisplayName("产品代码")]
@@ -136,7 +140,26 @@ namespace SyncOAdll
                 var customFields = (from fields in dbcontext.CustomerFieldTrackExt where fields.ProjectID == projectBinder.ProjectID && fields.BugID == projectBinder.BugID select fields).SingleOrDefault();
 
                 MainProductName = customFields.Custom_1; //主产品名称
+
                 ProductLevel = customFields.Custom_3; //产品等级
+                Dictionary<string, string> ProductLevelDic = new Dictionary<string, string>();
+                ProductLevelDic.Add("A级", "0");
+                ProductLevelDic.Add("B级", "1");
+                ProductLevelDic.Add("C级", "2");
+
+                if (ProductLevel !=null)
+                {
+                    if (ProductLevelDic.ContainsKey(ProductLevel)  )
+                    {
+                        ProductLevelCode = ProductLevelDic[ProductLevel];
+                    }
+                    else
+
+                        ProductLevelCode = null;
+                }
+                else
+                    ProductLevelCode = null;
+
                 ProductManagerName = customFields.Custom_2;//产品经理
 
                 var newNames = from c in allMembers.ToList() select new { Name = c.FName + ' ' + c.LName, code=c.Login1 };
@@ -144,6 +167,19 @@ namespace SyncOAdll
 
 
                 ProductBelong = customFields.Custom_4; // 产品归属
+                if (ProductBelong!=null)
+                {
+                    if (ProductBelong.Contains("."))
+                    {
+                        ProductBelongCode = (from code in ProductBelong.Split('.') select code).FirstOrDefault();//产品归属代码
+                    }
+                    else
+                        ProductBelongCode = null;
+                }
+                else
+                    ProductBelongCode = null;
+
+
                 ProductType = customFields.Desc_Custom_3;//产品类型
 
 

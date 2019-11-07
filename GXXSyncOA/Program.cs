@@ -69,9 +69,11 @@ namespace GXXSyncOA
                         createdate = info.SubmitDate,//提交日期
                         text=info.Desc,//描述
                         cpname=info.MainProductName,//主产品名称
-                        cplevel=info.ProductLevel,//产品等级
+                        //cplevel=info.ProductLevel,//产品等级
+                        cplevel=info.ProductLevelCode,//产品等级代码
                         workcode=info.ProductManager,//产品经理
-                        cpx=info.ProductBelong,//产品归属
+                        //cpx=info.ProductBelong,//产品归属
+                        cpx=info.ProductBelongCode,//产品归属代码
                         sotype=info.ProductType,//产品类型
                         cpcode=info.ProductCode,//产品代码
                         cpzycd=info.ProductUrgentLevel,//产品重要紧急程度
