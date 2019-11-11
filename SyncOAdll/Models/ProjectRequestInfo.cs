@@ -86,6 +86,7 @@ namespace SyncOAdll
                     SubmitterID = bug.CreatedByPerson;
                     SubmitDate = Convert.ToDateTime(bug.DateCreated).ToShortDateString();
                     Desc = bug.ProblemDescription;
+
                 }
 
                 //获取状态名称
@@ -163,7 +164,13 @@ namespace SyncOAdll
                 ProductManagerName = customFields.Custom_2;//产品经理
 
                 var newNames = from c in allMembers.ToList() select new { Name = c.FName + ' ' + c.LName, code=c.Login1 };
-                ProductManager = (from c in newNames where c.Name == ProductManagerName select c.code).SingleOrDefault();
+                if (ProductManagerName != null)
+                {
+                    ProductManager = (from c in newNames where c.Name == ProductManagerName select c.code).SingleOrDefault();
+                }
+                else
+                    ProductManager = null;
+
 
 
                 ProductBelong = customFields.Custom_4; // 产品归属
@@ -194,22 +201,28 @@ namespace SyncOAdll
                 var customFields2 = (from fields2 in dbcontext.CustomerFieldTrackExt2 where fields2.ProjectID == projectBinder.ProjectID && fields2.IssueID == projectBinder.BugID select fields2);
                 ProductCode = (from a in customFields2 where a.PageNumber == 7 select a.Custom_7).SingleOrDefault();//产品代码
                 CEO = (from a in customFields2 where a.PageNumber == 6 select a.Custom_1).SingleOrDefault(); //事业群总裁
+
                 ProjectMeberNames = (from a in customFields2 where a.PageNumber == 5 select a.Custom_3).SingleOrDefault(); //项目组成员
-                List<string> members = (from uid in ProjectMeberNames.Split(',') select uid).ToList();
-                for (int i = 0; i < members.Count(); i++)
+                if (ProjectMeberNames != null)
                 {
-                    var logincode = (from c in newNames where c.Name == members[i].Trim() select c.code).SingleOrDefault();
-                    if (logincode != null)
+                    List<string> members = (from uid in ProjectMeberNames.Split(',') select uid).ToList();
+                    for (int i = 0; i < members.Count(); i++)
                     {
-                        if (i == members.Count - 1)
+                        var logincode = (from c in newNames where c.Name == members[i].Trim() select c.code).SingleOrDefault();
+                        if (logincode != null)
                         {
-                            ProjectMebers = ProjectMebers + logincode ;
+                            if (i == members.Count - 1)
+                            {
+                                ProjectMebers = ProjectMebers + logincode;
+                            }
+                            else
+                                ProjectMebers = ProjectMebers + logincode + ',';
                         }
-                        else
-                            ProjectMebers = ProjectMebers + logincode + ',';
+
                     }
-                   
                 }
+               
+               
 
 
                 //attchments
