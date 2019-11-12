@@ -79,7 +79,7 @@ namespace GXXSyncOA
                         cpzycd=info.ProductUrgentLevel,//产品重要紧急程度
                         enddate=info.FinishDate,//要求完成时间
                         ysmoney=info.ProjectBudget,//项目预算金额
-                        zc=info.CEO,//事业群总裁
+                        //zc=info.CEO,//事业群总裁
                         xmcy=info.ProjectMebers,//项目组成员
                         projectys=info.ProjectBudgetDesc,//项目预算说明
                         ftpfile=info.Attachments4OA//附件信息（按OA要求，组织后，发给对方）

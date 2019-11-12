@@ -60,7 +60,7 @@ namespace SyncOAdll
         public string FinishDate { get; set; }//要求完成时间
         [DisplayName("项目预算金额")]
         public string ProjectBudget { get; set; }// 项目预算金额
-        [DisplayName("事业群总裁")]
+        //[DisplayName("事业群总裁")]
         public string CEO { get; set; }//事业群总裁
         [DisplayName("项目组成员")]
         public string ProjectMebers { get; set; }//项目组成员
@@ -200,7 +200,7 @@ namespace SyncOAdll
                 //get table CustomerFieldTrackExt2
                 var customFields2 = (from fields2 in dbcontext.CustomerFieldTrackExt2 where fields2.ProjectID == projectBinder.ProjectID && fields2.IssueID == projectBinder.BugID select fields2);
                 ProductCode = (from a in customFields2 where a.PageNumber == 7 select a.Custom_7).SingleOrDefault();//产品代码
-                CEO = (from a in customFields2 where a.PageNumber == 6 select a.Custom_1).SingleOrDefault(); //事业群总裁
+                //CEO = (from a in customFields2 where a.PageNumber == 6 select a.Custom_1).SingleOrDefault(); //事业群总裁
 
                 ProjectMeberNames = (from a in customFields2 where a.PageNumber == 5 select a.Custom_3).SingleOrDefault(); //项目组成员
                 if (ProjectMeberNames != null)
