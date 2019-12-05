@@ -173,6 +173,18 @@
           <Property Name="KeyTask" Type="int" />
           <Property Name="ParentTaskBoardFolderID" Type="int" />
         </EntityType>
+        <EntityType Name="BugSelectionInfo">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+            <PropertyRef Name="BugID" />
+            <PropertyRef Name="FieldID" />
+            <PropertyRef Name="FieldSelectionID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="BugID" Type="int" Nullable="false" />
+          <Property Name="FieldID" Type="int" Nullable="false" />
+          <Property Name="FieldSelectionID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="CustomerFieldTrackExt">
           <Key>
             <PropertyRef Name="ProjectID" />
@@ -482,6 +494,7 @@
         </EntityType>
         <EntityContainer Name="GXX_DSModelStoreContainer">
           <EntitySet Name="Bug" EntityType="Self.Bug" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BugSelectionInfo" EntityType="Self.BugSelectionInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CustomerFieldTrackExt" EntityType="Self.CustomerFieldTrackExt" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CustomerFieldTrackExt2" EntityType="Self.CustomerFieldTrackExt2" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KWAttachments" EntityType="Self.KWAttachments" Schema="dbo" store:Type="Tables" />
@@ -931,6 +944,7 @@
           <EntitySet Name="KWAttachments" EntityType="Self.KWAttachments" />
           <EntitySet Name="LogIn" EntityType="Self.LogIn" />
           <EntitySet Name="ProgressStatusTypes" EntityType="GXX_DSModel.ProgressStatusTypes" />
+          <EntitySet Name="BugSelectionInfo" EntityType="GXX_DSModel.BugSelectionInfo" />
         </EntityContainer>
         <EntityType Name="ProgressStatusTypes">
           <Key>
@@ -974,6 +988,18 @@
           <Property Name="OwnerMustBeAssigned" Type="Int32" />
           <Property Name="WorkflowTypeOption" Type="Int32" />
           <Property Name="IfDefaultOwner4SamePrevious" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BugSelectionInfo">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+            <PropertyRef Name="BugID" />
+            <PropertyRef Name="FieldID" />
+            <PropertyRef Name="FieldSelectionID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="BugID" Type="Int32" Nullable="false" />
+          <Property Name="FieldID" Type="Int32" Nullable="false" />
+          <Property Name="FieldSelectionID" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1451,6 +1477,16 @@
                 <ScalarProperty Name="Weight" ColumnName="Weight" />
                 <ScalarProperty Name="ProgressStatusName" ColumnName="ProgressStatusName" />
                 <ScalarProperty Name="ProgressStatusID" ColumnName="ProgressStatusID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BugSelectionInfo">
+            <EntityTypeMapping TypeName="GXX_DSModel.BugSelectionInfo">
+              <MappingFragment StoreEntitySet="BugSelectionInfo">
+                <ScalarProperty Name="FieldSelectionID" ColumnName="FieldSelectionID" />
+                <ScalarProperty Name="FieldID" ColumnName="FieldID" />
+                <ScalarProperty Name="BugID" ColumnName="BugID" />
                 <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
               </MappingFragment>
             </EntityTypeMapping>

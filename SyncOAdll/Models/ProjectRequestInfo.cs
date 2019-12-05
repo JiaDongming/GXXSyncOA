@@ -202,28 +202,47 @@ namespace SyncOAdll
                 ProductCode = (from a in customFields2 where a.PageNumber == 7 select a.Custom_7).SingleOrDefault();//产品代码
                 //CEO = (from a in customFields2 where a.PageNumber == 6 select a.Custom_1).SingleOrDefault(); //事业群总裁
 
-                ProjectMeberNames = (from a in customFields2 where a.PageNumber == 5 select a.Custom_3).SingleOrDefault(); //项目组成员
-                if (ProjectMeberNames != null)
+                //项目组成员有长度限制，需要换一种取法
+                //ProjectMeberNames = (from a in customFields2 where a.PageNumber == 5 select a.Custom_3).SingleOrDefault(); //项目组成员
+                //if (ProjectMeberNames != null)
+                //{
+                //    List<string> members = (from uid in ProjectMeberNames.Split(',') select uid).ToList();
+                //    for (int i = 0; i < members.Count(); i++)
+                //    {
+                //        var logincode = (from c in newNames where c.Name == members[i].Trim() select c.code).SingleOrDefault();
+                //        if (logincode != null)
+                //        {
+                //            if (i == members.Count - 1)
+                //            {
+                //                ProjectMebers = ProjectMebers + logincode;
+                //            }
+                //            else
+                //                ProjectMebers = ProjectMebers + logincode + ',';
+                //        }
+
+                //    }
+                //}
+
+                var pmselection = from s in dbcontext.BugSelectionInfo where s.ProjectID == projectBinder.ProjectID && s.BugID == projectBinder.BugID && s.FieldID==503 select s;
+                ProjectMebers = "";
+                if (pmselection.Count() > 0)
                 {
-                    List<string> members = (from uid in ProjectMeberNames.Split(',') select uid).ToList();
-                    for (int i = 0; i < members.Count(); i++)
+                    foreach (var item in pmselection)
                     {
-                        var logincode = (from c in newNames where c.Name == members[i].Trim() select c.code).SingleOrDefault();
+                        var logincode = (from c in allMembers where c.PersonID == item.FieldSelectionID select c.Login1).SingleOrDefault();
                         if (logincode != null)
                         {
-                            if (i == members.Count - 1)
+                            if (ProjectMebers=="")
                             {
-                                ProjectMebers = ProjectMebers + logincode;
+                                ProjectMebers =  logincode;
                             }
                             else
-                                ProjectMebers = ProjectMebers + logincode + ',';
+                                ProjectMebers = ProjectMebers  + ',' + logincode;
                         }
-
                     }
                 }
                
-               
-
+                    
 
                 //attchments
                 var attachments = from att in dbcontext.KWAttachments where att.ProjectID == projectBinder.ProjectID && att.ParentItemID == projectBinder.BugID select att;

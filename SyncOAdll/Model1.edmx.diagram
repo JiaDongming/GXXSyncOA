@@ -4,13 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f741e4a8477c4771a046846153f7e8cd" Name="Diagram1" ZoomLevel="61">
+      <Diagram DiagramId="f741e4a8477c4771a046846153f7e8cd" Name="Diagram1" ZoomLevel="17">
         <EntityTypeShape EntityType="GXX_DSModel.Bug" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GXX_DSModel.CustomerFieldTrackExt" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GXX_DSModel.CustomerFieldTrackExt2" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GXX_DSModel.KWAttachments" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GXX_DSModel.LogIn" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GXX_DSModel.ProgressStatusTypes" Width="1.5" PointX="5.375" PointY="9.75" />
+        <EntityTypeShape EntityType="GXX_DSModel.BugSelectionInfo" Width="1.5" PointX="11.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

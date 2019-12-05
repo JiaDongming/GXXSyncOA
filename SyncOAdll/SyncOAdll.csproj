@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BugSelectionInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Attachment.cs" />
     <Compile Include="Bug.cs">
       <DependentUpon>Model1.tt</DependentUpon>

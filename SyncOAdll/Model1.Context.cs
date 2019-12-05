@@ -31,5 +31,6 @@ namespace SyncOAdll
         public virtual DbSet<KWAttachments> KWAttachments { get; set; }
         public virtual DbSet<LogIn> LogIn { get; set; }
         public virtual DbSet<ProgressStatusTypes> ProgressStatusTypes { get; set; }
+        public virtual DbSet<BugSelectionInfo> BugSelectionInfo { get; set; }
     }
 }
